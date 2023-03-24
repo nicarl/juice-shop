@@ -29,4 +29,4 @@ jobs:
       # Run Snyk Open Source
       - name: Run Snyk Open Source
         run: |
-          snyk test --severity-threshold=high
+          snyk test --severity-threshold=medium 
