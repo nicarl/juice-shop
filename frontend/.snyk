@@ -1,0 +1,24 @@
+custom_rules:
+  - id: 'String literal "password" (CR)'
+    description: 'There is a string with the value of "password."'
+    severity: 'low'
+    cwe:
+      - 'CWE-0001'
+    fix_analysis: 'Pick another string'
+    rule_code: "StringLiteral<\"password\">\n# This example searches for string constants and identifiers (function or variable names) in the code. This can be\n# used to find sensitive hardcoded data such as passwords. You can also use the following templates to search for\n# strings or identifiers individually, and integers and booleans can be looked up as well:\n#     StringLiteral<\"password\">   - only finds string literals with the given value\n#     Identifier<\"password\">      - only finds identifiers (functions and variable names) with the given value\n#     NumberLiteral<1234>         - finds numbers (e.g. a port number)\n#     BooleanLiteral<\"true\">      - finds boolean constants of value \"true\" (note that capitalization matters -\n#                                   Python takes an upper-case \"True\")\n# Regular expressions (in Google re2 syntax) can be used in place of strings as well. For example, the following\n# query will match all string constants containing a \"password\" substring:\n#     StringLiteral<~\".*password.*\">\n# A wildcard predicate can be used to find any string, not just strings matching a specified text:\n#     StringLiteral<PRED:Any>"
+    languages:
+      - 'apex'
+      - 'c'
+      - 'cpp'
+      - 'csharp'
+      - 'go'
+      - 'java'
+      - 'javascript'
+      - 'kotlin'
+      - 'php'
+      - 'python'
+      - 'ruby'
+      - 'scala'
+      - 'swift'
+      - 'typescript'
+      - 'vb'
